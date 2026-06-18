@@ -112,6 +112,14 @@ h3 {
   line-height: 1.8;
 }
 
+#financial-aid .section-header {
+  max-width: 100%;
+}
+
+#financial-aid .lead{
+  max-width: 100%;
+}
+
 /* ─── Buttons ───────────────────────────────────────────── */
 .btn {
   display: inline-flex;
@@ -250,7 +258,7 @@ h3 {
   display: grid;
   grid-template-columns: 1fr 420px;
   gap: 80px;
-  align-items: center;
+  /*align-items: center;*/
   position: relative;
   z-index: 1;
 }
@@ -1139,7 +1147,7 @@ details p {
 @media (max-width: 1024px) {
   .consultant-grid { grid-template-columns: 1fr; gap: 48px; }
   .consultant-image-wrap { max-width: 400px; }
-  .consultant-badge { right: 0; }
+  .consultant-badge { /*right: 0;*/ }
   .personalized-layout { grid-template-columns: 1fr; }
   .tailored-card { position: relative; top: auto; }
 }
@@ -1238,7 +1246,7 @@ details p {
 .story-card {
   background: rgba(255,255,255,.05);
   border: 1px solid rgba(255,255,255,.10);
-  border-radius: var(--r-xl);
+  border-radius: var(--r-lg);
   padding: 36px;
   display: flex;
   flex-direction: column;
@@ -1314,7 +1322,7 @@ details p {
   text-transform: uppercase;
   color: rgba(255,255,255,.5);
   margin-bottom: 10px;
-  width: 80%;
+  width: 75%;
 }
 
 .story-uni-name {

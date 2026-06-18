@@ -13,6 +13,109 @@
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Serif+Display:ital@0;1&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ─── Hero Carousel ─────────────────────────────────── */
+    .hero-carousel {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    /* Track clips to one card at a time */
+    .hero-carousel-track {
+      position: relative;
+      width: 100%;
+    }
+
+    /* Every slide is stacked; only .is-active is visible */
+    .hero-carousel-track .story-card {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .45s cubic-bezier(.25,.46,.45,.94),
+                  transform .45s cubic-bezier(.25,.46,.45,.94);
+      pointer-events: none;
+    }
+
+    /* The active card is the height reference too */
+    .hero-carousel-track .story-card.is-active {
+      position: relative;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Controls row */
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding: 0 4px;
+    }
+
+    .carousel-arrows {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .carousel-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.18);
+      color: rgba(255,255,255,.85);
+      cursor: pointer;
+      transition: background .2s, border-color .2s, transform .15s;
+      flex-shrink: 0;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(255,255,255,.18);
+      border-color: rgba(255,255,255,.35);
+      transform: scale(1.08);
+    }
+
+    .carousel-btn.is-paused {
+      color: var(--accent);
+      border-color: rgba(255,204,0,.35);
+    }
+
+    .carousel-btn svg { display: block; }
+
+    /* Dots */
+    .carousel-dots {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .carousel-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.25);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background .25s, transform .25s;
+    }
+
+    .carousel-dot.is-active {
+      background: var(--accent);
+      transform: scale(1.3);
+    }
+
+    @media (max-width: 900px) {
+      .hero-carousel { max-width: 100%; }
+      /* override the old .hero-card { display:none } rule */
+      .hero-carousel { display: block !important; }
+    }
+  </style>
 </head>
 
 <body>
@@ -87,26 +190,187 @@
           </div>
         </div>
 
-        <div class="hero-card" aria-hidden="true">
-          <div class="hero-card-stat">
-            <div class="hero-stat-number">95%</div>
-            <div class="hero-stat-label">Of students admitted to at least one target university</div>
+        <!-- ── Hero Story Carousel ── -->
+        <div class="hero-carousel" aria-label="Student success stories">
+
+          <!-- Controls -->
+          <div class="carousel-controls">
+            <div class="carousel-arrows">
+              <button class="carousel-btn" id="carousel-prev" aria-label="Previous story" tabindex="0">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                  <path d="M10 3L5 8l5 5"/>
+                </svg>
+              </button>
+              <button class="carousel-btn" id="carousel-pause" aria-label="Pause carousel" tabindex="0">
+                <!-- icon injected by JS -->
+              </button>
+              <button class="carousel-btn" id="carousel-next" aria-label="Next story" tabindex="0">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                  <path d="M6 3l5 5-5 5"/>
+                </svg>
+              </button>
+            </div>
+            <div class="carousel-dots" role="tablist" aria-label="Go to slide">
+              <button class="carousel-dot" role="tab" aria-label="Slide 1"></button>
+              <button class="carousel-dot" role="tab" aria-label="Slide 2"></button>
+              <button class="carousel-dot" role="tab" aria-label="Slide 3"></button>
+              <button class="carousel-dot" role="tab" aria-label="Slide 4"></button>
+              <button class="carousel-dot" role="tab" aria-label="Slide 5"></button>
+            </div>
           </div>
-          <div class="hero-card-stat">
-            <div class="hero-stat-number">1-on-1</div>
-            <div class="hero-stat-label">Fully personalized guidance — no group sessions</div>
-          </div>
-          <div class="hero-card-stat">
-            <div class="hero-stat-number">15+</div>
-            <div class="hero-stat-label">Countries represented in our student community</div>
-          </div>
-        </div>
+
+          <div class="hero-carousel-track" id="hero-carousel-track">
+
+            <!-- Slide 1 — Antonella Masini -->
+            <article class="story-card story-card--featured">
+              <div class="story-university">
+                <span class="story-program">BS in Mechanical Engineering with a concentration in CS and Product Design</span>
+                <div class="story-uni-name">MIT</div>
+                <div class="story-uni-sub">Massachusetts Institute of Technology</div>
+                <div class="story-scholarship">
+                  <span>🎓</span>
+                  Breakthrough Junior Challenge Full Scholarship
+                </div>
+              </div>
+              <div class="story-also">
+                <span class="story-also-label">Also admitted to</span>
+                <div class="story-also-list">
+                  <span class="story-also-item">Stanford University</span>
+                  <span class="story-also-sep">·</span>
+                  <span class="story-also-item">University of Michigan</span>
+                </div>
+              </div>
+              <div class="story-divider"></div>
+              <div class="story-student">
+                <img src="img/antonella.jfif" alt="Antonella Masini" class="story-photo">
+                <div class="story-info">
+                  <div class="story-name">Antonella Masini</div>
+                  <div class="story-services">Admissions Consulting</div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Slide 2 — Marcelo Rondoy -->
+            <article class="story-card story-card--featured">
+              <div class="story-university">
+                <span class="story-program">Full-Time MBA</span>
+                <div class="story-uni-name">Harvard</div>
+                <div class="story-uni-sub">Harvard University</div>
+              </div>
+              <div class="story-also">
+                <span class="story-also-label">Also admitted to</span>
+                <div class="story-also-list">
+                  <span class="story-also-item">University of Chicago</span>
+                  <span class="story-also-sep">·</span>
+                  <span class="story-also-item">Cornell University</span>
+                  <span class="story-also-sep">·</span>
+                  <span class="story-also-item">UC Berkeley</span>
+                  <span class="story-also-sep">·</span>
+                  <span class="story-also-item">University of Virginia</span>
+                </div>
+              </div>
+              <div class="story-divider"></div>
+              <div class="story-student">
+                <img src="img/marcelo.jpg" alt="Marcelo Rondoy" class="story-photo">
+                <div class="story-info">
+                  <div class="story-name">Marcelo Rondoy</div>
+                  <div class="story-services">Admissions Consulting · GRE</div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Slide 3 — Socrates Osorio -->
+            <article class="story-card story-card--featured">
+              <div class="story-university">
+                <span class="story-program">BS in Electrical Engineering and Computer Sciences &amp; Business Administration</span>
+                <div class="story-uni-name">UC Berkeley</div>
+                <div class="story-uni-sub">University of California, Berkeley</div>
+                <div class="story-scholarship">
+                  <span>🎓</span>
+                  Full Scholarship
+                </div>
+              </div>
+              <div class="story-also">
+                <span class="story-also-label">Also admitted to</span>
+                <div class="story-also-list">
+                  <span class="story-also-item">University of Illinois</span>
+                  <span class="story-also-sep">·</span>
+                  <span class="story-also-item">University of Florida</span>
+                </div>
+              </div>
+              <div class="story-divider"></div>
+              <div class="story-student">
+                <img src="img/socrates.jfif" alt="Socrates Osorio" class="story-photo">
+                <div class="story-info">
+                  <div class="story-name">Socrates Osorio</div>
+                  <div class="story-services">Admissions Consulting · SAT · TOEFL</div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Slide 4 — Natalia Moreno -->
+            <article class="story-card story-card--featured">
+              <div class="story-university">
+                <span class="story-program">Major of Business Exploratory</span>
+                <div class="story-uni-name">ASU</div>
+                <div class="story-uni-sub">Arizona State University</div>
+                <div class="story-scholarship">
+                  <span>🎓</span>
+                  Full Scholarship USD 276 000
+                </div>
+              </div>
+              <div class="story-also">
+                <span class="story-also-label">Also admitted to</span>
+                <div class="story-also-list">
+                  <span class="story-also-item">Michigan State University</span>
+                  <span class="story-also-sep">·</span>
+                  <span class="story-also-item">Indiana University</span>
+                  <span class="story-also-sep">·</span>
+                  <span class="story-also-item">Purdue University</span>
+                </div>
+              </div>
+              <div class="story-divider"></div>
+              <div class="story-student">
+                <img src="img/natalia.jpg" alt="Natalia Moreno" class="story-photo">
+                <div class="story-info">
+                  <div class="story-name">Natalia Moreno</div>
+                  <div class="story-services">Admissions Consulting · SAT · TOEFL</div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Slide 5 — Ruben Bazalar -->
+            <article class="story-card story-card--featured">
+              <div class="story-university">
+                <span class="story-program">BS in Civil Engineering</span>
+                <div class="story-uni-name">Columbia</div>
+                <div class="story-uni-sub">Columbia University</div>
+                <div class="story-scholarship">
+                  <span>🎓</span>
+                  90% Scholarship
+                </div>
+              </div>
+              <div class="story-divider"></div>
+              <div class="story-student">
+                <img src="img/ruben.jfif" alt="Ruben Bazalar" class="story-photo">
+                <div class="story-info">
+                  <div class="story-name">Ruben Bazalar</div>
+                  <div class="story-services">Admissions Consulting · SAT · TOEFL</div>
+                </div>
+              </div>
+            </article>
+
+          </div><!-- /track -->
+
+          
+
+        </div><!-- /hero-carousel -->
 
       </div>
     </section>
 
     <!-- ═══ STATS STRIP ══════════════════════════════════════ -->
-    <div class="stats-strip" aria-label="Key statistics">
+    <!-- <div class="stats-strip" aria-label="Key statistics">
       <div class="container">
         <div class="stats-grid">
           <div class="stat-cell">
@@ -127,7 +391,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- ═══ CHALLENGES ════════════════════════════════════════ -->
     <section class="section challenges-section">
@@ -170,6 +434,12 @@
             <p>Essays, recommendations, transcripts and supporting materials often require significant preparation,
               coordination and time.</p>
           </article>
+          <article></article>
+          <article class="challenge-card fade-up" data-num="07">
+            <h3>Interview Preparation</h3>
+            <p>Most applicants are not fully prepared for admissions interviews, particularly those conducted within 
+              American or European cultural and academic contexts.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -180,7 +450,7 @@
         <div class="section-header center">
           <p class="eyebrow">Admissions Process</p>
           <h2>A personalized admissions journey, step by step.</h2>
-          <p class="lead">Every engagement follows a structured, proven process — adapted to each student's unique
+          <p class="lead">Every candidate follows a structured, proven process — adapted to each student's unique
             goals, timeline and profile.</p>
         </div>
 
@@ -589,13 +859,13 @@
             </div>
 
             <p class="consultant-bio">
-              Oscar is the founder of Master’s College and has spent more than two decades advising students on gaining admission to the world’s top universities, including Harvard, Oxford, MIT, Stanford, NYU, Toronto, LBS, INSEAD, Columbia, Yale, and many others. He has also taught preparation courses for standardized tests such as the GMAT, SAT, GRE, and TOEFL.
+              Oscar is the founder of Master's College and has helped hundreds of students gain admission to some of the world's most prestigious universities. He has taught Investments and Finance courses at the University of the Pacific and has teaching experience at The University of Iowa.
             </p>
             <p class="consultant-bio">
-              Oscar holds an MBA with a concentration in Investments and Finance from The University of Iowa, where he received several assistantships and scholarships. He has served as a university instructor at the same institution and is a CFA Charterholder. He has completed specialized courses at Goldman Sachs, S&P Global, PIMCO, JP Morgan, the IMF, and other international financial institutions. His professional experience includes working at AEGON USA Investment Management, serving as General Manager of a brokerage firm, and holding positions at several insurance companies, including serving on the Investment Committee of MAPFRE.
+              He holds an MBA from The University of Iowa, where he received several assistantships and scholarships. In Peru, he earned a degree in Business Administration at the University of the Pacific and is also a graduate of the Master's Program in Communication Sciences at the Pontifical Catholic University of Peru.
             </p>
             <p class="consultant-bio">
-              Through his leadership of Master’s College, Oscar is committed to developing students’ potential and helping them achieve their academic and professional goals.
+              A CFA Charterholder, Oscar is a member of the Investment Committee of MAPFRE Peru. He has previously served as Chief Executive Officer at Andes Security Brokerage Firm and as Deputy Investment Manager and Head Trader at Pacífico Seguros. In the United States, he worked as an Asset Specialist at AEGON USA Investment Management. 
             </p>
 
             <a href="#contact" class="btn btn-ghost">
@@ -653,64 +923,61 @@
     <section id="financial-aid" class="section">
       <div class="container">
         <div class="section-header">
-          <p class="eyebrow">Personalized Guidance</p>
-          <h2>Every application requires a different strategy.</h2>
-          <p class="lead">There is no universal formula for admissions success. Every applicant brings a different
-            academic background, set of experiences, goals and opportunities.</p>
+          <p class="eyebrow">Affordable education</p>
+          <h2>Financial Aid</h2>
+          <p class="lead">The cost of attending a world-class university can seem overwhelming, leading many students 
+            to believe these opportunities are beyond their reach. Financial aid changes that reality. Understanding how 
+            aid works — and how it connects to the admissions process — is essential for maximizing both admission and 
+            funding opportunities.</p>
         </div>
 
         <div class="personalized-layout">
 
           <div class="strategy-grid">
             <div class="strategy-card">
-              <div class="strategy-card-icon">📖</div>
-              <h3>Academic Profile</h3>
-              <p>Grades, coursework, academic interests and test scores all influence admissions decisions differently
-                depending on the institution and program.</p>
+              <div class="strategy-card-icon">📊</div>
+              <h3>Aid & Admissions</h3>
+              <p>Financial aid is evaluated alongside your application. Universities consider academic achievement, personal 
+                background, accomplishments, and financial need when determining aid eligibility.</p>
             </div>
             <div class="strategy-card">
-              <div class="strategy-card-icon">🏅</div>
-              <h3>Experiences &amp; Activities</h3>
-              <p>Leadership, volunteering, research, competitions and internships help create a more complete and
-                compelling picture of each applicant.</p>
+              <div class="strategy-card-icon">💰</div>
+              <h3>Scholarships &amp; Funding</h3>
+              <p>Financial aid packages can cover anywhere from 50% to 100% of the total cost of attendance, making top 
+                universities significantly more accessible for qualified applicants.</p>
             </div>
             <div class="strategy-card">
-              <div class="strategy-card-icon">✍️</div>
-              <h3>Personal Narrative</h3>
-              <p>Essays and interviews help universities understand your motivations, character and the experiences that
-                shaped your journey.</p>
-            </div>
-            <div class="strategy-card">
-              <div class="strategy-card-icon">🎯</div>
-              <h3>University Matching</h3>
-              <p>Building the right university list is often as important as strengthening the application itself — fit
-                matters as much as rank.</p>
+              <div class="strategy-card-icon">🌍</div>
+              <h3>Access to Top Universities</h3>
+              <p>With the right admissions and financial aid strategy, students can pursue opportunities at some of the 
+                world's leading universities without assuming cost will be a barrier.</p>
             </div>
           </div>
 
           <div class="tailored-card">
             <span class="tailored-badge">Personalized Approach</span>
-            <h3>A tailored admissions strategy for every applicant.</h3>
-            <p>Just as no two students share the same academic journey, no two admissions plans should be identical.</p>
+            <h3>Financial Aid Strategy</h3>
+            <p>Making a top-tier education affordable starts with a strong application. The more competitive your profile, 
+              the greater your potential access to financial aid opportunities.</p>
             <div class="tailored-divider"></div>
             <div class="tailored-feature">
               <div class="tailored-feature-dot"></div>
-              Deep-dive profile assessment before any strategy is defined
+              Integrated financial aid planning throughout the admissions process
             </div>
             <div class="tailored-feature">
               <div class="tailored-feature-dot"></div>
-              University list built around your profile — not a generic ranking
+              Evaluation of funding opportunities based on your profile
             </div>
             <div class="tailored-feature">
               <div class="tailored-feature-dot"></div>
-              Financial aid strategy integrated from day one
+              Guidance on need-based and merit-based aid options
             </div>
             <div class="tailored-feature">
               <div class="tailored-feature-dot"></div>
-              Direct access to your consultant throughout the process
+              Strategies designed to maximize both admission and financial aid outcomes
             </div>
             <div style="margin-top:32px;">
-              <a href="#contact" class="btn btn-outline">Start Your Strategy</a>
+              <a href="#contact" class="btn btn-outline">Explore Your Opportunities</a>
             </div>
           </div>
 
@@ -741,12 +1008,12 @@
           </details>
           <details>
             <summary>Do you work with students from all countries?</summary>
-            <p>Yes. We work with students across Latin America and internationally, supporting applications to
+            <p>Yes. We work with students internationally, supporting applications to
               universities in the United States, United Kingdom, Canada and Europe.</p>
           </details>
           <details>
             <summary>What makes this consulting different from others?</summary>
-            <p>Every engagement is led directly by Oscar Pina-Lozada — there are no junior consultants or outsourced
+            <p>Every engagement is led directly by our expert consultant Oscar Pina-Lozada, CFA — there are no junior consultants or outsourced
               components. The strategy is built around your individual profile, and financial aid planning is
               incorporated from the start rather than treated as an afterthought.</p>
           </details>
@@ -1121,6 +1388,8 @@
     </div>
 
   </footer>
+
+  <script src="hero-carousel.js" defer></script>
 
 </body>
 
