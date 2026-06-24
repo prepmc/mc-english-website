@@ -1831,7 +1831,7 @@ details p {
 ========================= */
 
 .success-principles{
-  display:grid;
+  display:grid; 
   grid-template-columns:repeat(2, minmax(0,1fr));
   gap:48px;
   margin-top:40px;
