@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Undergraduate Admissions Consulting | Master's College</title>
+  <title>Admissions Consulting for Undergraduate Programs | Master's College</title>
   <meta name="description"
     content="Personalized undergraduate admissions consulting for students applying to leading universities in the United States, Canada, Europe and the United Kingdom.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,11 +30,13 @@
     /* Every slide is stacked; only .is-active is visible */
     .hero-carousel-track .story-card {
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       opacity: 0;
       transform: translateY(12px);
-      transition: opacity .45s cubic-bezier(.25,.46,.45,.94),
-                  transform .45s cubic-bezier(.25,.46,.45,.94);
+      transition: opacity .45s cubic-bezier(.25, .46, .45, .94),
+        transform .45s cubic-bezier(.25, .46, .45, .94);
       pointer-events: none;
     }
 
@@ -65,28 +67,31 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 34px; height: 34px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.18);
-      color: rgba(255,255,255,.85);
+      background: rgba(255, 255, 255, .10);
+      border: 1px solid rgba(255, 255, 255, .18);
+      color: rgba(255, 255, 255, .85);
       cursor: pointer;
       transition: background .2s, border-color .2s, transform .15s;
       flex-shrink: 0;
     }
 
     .carousel-btn:hover {
-      background: rgba(255,255,255,.18);
-      border-color: rgba(255,255,255,.35);
+      background: rgba(255, 255, 255, .18);
+      border-color: rgba(255, 255, 255, .35);
       transform: scale(1.08);
     }
 
     .carousel-btn.is-paused {
       color: var(--accent);
-      border-color: rgba(255,204,0,.35);
+      border-color: rgba(255, 204, 0, .35);
     }
 
-    .carousel-btn svg { display: block; }
+    .carousel-btn svg {
+      display: block;
+    }
 
     /* Dots */
     .carousel-dots {
@@ -96,9 +101,10 @@
     }
 
     .carousel-dot {
-      width: 7px; height: 7px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background: rgba(255,255,255,.25);
+      background: rgba(255, 255, 255, .25);
       border: none;
       cursor: pointer;
       padding: 0;
@@ -111,9 +117,14 @@
     }
 
     @media (max-width: 900px) {
-      .hero-carousel { max-width: 100%; }
+      .hero-carousel {
+        max-width: 100%;
+      }
+
       /* override the old .hero-card { display:none } rule */
-      .hero-carousel { display: block !important; }
+      .hero-carousel {
+        display: block !important;
+      }
     }
   </style>
 </head>
@@ -124,14 +135,13 @@
   <header class="header">
     <div class="container">
       <a href="#" class="logo" aria-label="Master's College">
-        <img
-          src="img/logo.png"
-          alt="Master's College">
+        <img src="img/logo.png" alt="Master's College">
       </a>
       <nav class="nav" aria-label="Main navigation">
+        <a href="#who-we-are">Who We Are</a>
+        <a href="#consultant">Consultant</a>
         <a href="#journey">Process</a>
         <a href="#success-stories">Success Stories</a>
-        <a href="#consultant">Consultant</a>
         <a href="#financial-aid">Financial Aid</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -152,7 +162,7 @@
 
         <div>
           <div class="hero-eyebrow">
-            <p class="eyebrow">Undergraduate Admissions Consulting</p>
+            <p class="eyebrow">Admissions Consulting for Undergraduate Programs</p>
           </div>
 
           <h1 id="hero-heading">
@@ -177,15 +187,15 @@
           <div class="hero-trust">
             <div class="trust-item">
               <span class="trust-item-icon">✓</span>
+              Expert Consulting with +20 years of Experience
+            </div>
+            <div class="trust-item">
+              <span class="trust-item-icon">✓</span>
               Personalized 1-to-1 Guidance
             </div>
             <div class="trust-item">
               <span class="trust-item-icon">✓</span>
               Scholarship &amp; Financial Aid Support
-            </div>
-            <div class="trust-item">
-              <span class="trust-item-icon">✓</span>
-              International Applications — US, UK, Europe &amp; Canada
             </div>
           </div>
         </div>
@@ -198,7 +208,7 @@
             <div class="carousel-arrows">
               <button class="carousel-btn" id="carousel-prev" aria-label="Previous story" tabindex="0">
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
-                  <path d="M10 3L5 8l5 5"/>
+                  <path d="M10 3L5 8l5 5" />
                 </svg>
               </button>
               <button class="carousel-btn" id="carousel-pause" aria-label="Pause carousel" tabindex="0">
@@ -206,7 +216,7 @@
               </button>
               <button class="carousel-btn" id="carousel-next" aria-label="Next story" tabindex="0">
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
-                  <path d="M6 3l5 5-5 5"/>
+                  <path d="M6 3l5 5-5 5" />
                 </svg>
               </button>
             </div>
@@ -224,7 +234,8 @@
             <!-- Slide 1 — Antonella Masini -->
             <article class="story-card story-card--featured">
               <div class="story-university">
-                <span class="story-program">BS in Mechanical Engineering with a concentration in CS and Product Design</span>
+                <span class="story-program">BS in Mechanical Engineering with a concentration in CS and Product
+                  Design</span>
                 <div class="story-uni-name">MIT</div>
                 <div class="story-uni-sub">Massachusetts Institute of Technology</div>
                 <div class="story-scholarship">
@@ -245,7 +256,7 @@
                 <img src="img/antonella.jfif" alt="Antonella Masini" class="story-photo">
                 <div class="story-info">
                   <div class="story-name">Antonella Masini</div>
-                  <div class="story-services">Admissions Consulting</div>
+                  <div class="story-services">Enrolled in Admissions Consulting</div>
                 </div>
               </div>
             </article>
@@ -274,7 +285,7 @@
                 <img src="img/marcelo.jpg" alt="Marcelo Rondoy" class="story-photo">
                 <div class="story-info">
                   <div class="story-name">Marcelo Rondoy</div>
-                  <div class="story-services">Admissions Consulting · GRE</div>
+                  <div class="story-services">Enrolled in Admissions Consulting · GRE Prep</div>
                 </div>
               </div>
             </article>
@@ -282,7 +293,8 @@
             <!-- Slide 3 — Socrates Osorio -->
             <article class="story-card story-card--featured">
               <div class="story-university">
-                <span class="story-program">BS in Electrical Engineering and Computer Sciences &amp; Business Administration</span>
+                <span class="story-program">BS in Electrical Engineering and Computer Sciences &amp; Business
+                  Administration</span>
                 <div class="story-uni-name">UC Berkeley</div>
                 <div class="story-uni-sub">University of California, Berkeley</div>
                 <div class="story-scholarship">
@@ -303,7 +315,7 @@
                 <img src="img/socrates.jfif" alt="Socrates Osorio" class="story-photo">
                 <div class="story-info">
                   <div class="story-name">Socrates Osorio</div>
-                  <div class="story-services">Admissions Consulting · SAT · TOEFL</div>
+                  <div class="story-services">Enrolled in Admissions Consulting · SAT Prep · TOEFL Prep</div>
                 </div>
               </div>
             </article>
@@ -334,7 +346,7 @@
                 <img src="img/natalia.jpg" alt="Natalia Moreno" class="story-photo">
                 <div class="story-info">
                   <div class="story-name">Natalia Moreno</div>
-                  <div class="story-services">Admissions Consulting · SAT · TOEFL</div>
+                  <div class="story-services">Enrolled in Admissions Consulting · SAT Prep · TOEFL Prep</div>
                 </div>
               </div>
             </article>
@@ -355,43 +367,259 @@
                 <img src="img/ruben.jfif" alt="Ruben Bazalar" class="story-photo">
                 <div class="story-info">
                   <div class="story-name">Ruben Bazalar</div>
-                  <div class="story-services">Admissions Consulting · SAT · TOEFL</div>
+                  <div class="story-services">Enrolled in Admissions Consulting · SAT Prep · TOEFL Prep</div>
                 </div>
               </div>
             </article>
 
           </div><!-- /track -->
 
-          
-
         </div><!-- /hero-carousel -->
 
       </div>
     </section>
 
-    <!-- ═══ STATS STRIP ══════════════════════════════════════ -->
-    <!-- <div class="stats-strip" aria-label="Key statistics">
+    <!-- ═══ WHO WE ARE ══════════════════════════════════════ -->
+    <section id="who-we-are" class="section section--light who-we-are-section">
       <div class="container">
+
+        <div class="wwa-grid">
+
+          <!-- Left: Logo + Identity block -->
+          <div class="wwa-identity">
+            <div class="wwa-logo-wrap">
+              <img src="img/logo.png" alt="Master's College" class="wwa-logo">
+            </div>
+            <div class="wwa-badge-strip">
+              <div class="wwa-badge">
+                <span class="wwa-badge-number">20<span class="wwa-badge-plus">+</span></span>
+                <span class="wwa-badge-label">Years of<br>Excellence</span>
+              </div>
+              <div class="wwa-badge-divider"></div>
+              <div class="wwa-badge">
+                <span class="wwa-badge-number">4</span>
+                <span class="wwa-badge-label">Continents<br>Reached</span>
+              </div>
+              <div class="wwa-badge-divider"></div>
+              <div class="wwa-badge">
+                <span class="wwa-badge-number">Top</span>
+                <span class="wwa-badge-label">Global<br>Universities</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Content -->
+          <div class="wwa-content">
+            <p class="eyebrow">Who We Are</p>
+            <h2>Leaders in standardized test preparation and admissions consulting for the world's top universities.
+            </h2>
+            <p class="lead">
+              We are an educational institution with one clear mission: to get you admitted to the best universities in
+              the
+              United States, Canada, the United Kingdom, Europe and Australia — even with scholarships or financial aid
+              —
+              through expert standardized test preparation and comprehensive admissions consulting, including financial
+              guidance.
+            </p>
+
+            <div class="wwa-pillars">
+              <div class="wwa-pillar">
+                <div class="wwa-pillar-icon">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div>
+                  <h4>Test Preparation</h4>
+                  <p>Comprehensive SAT, TOEFL, IELTS and other standardized exam courses tailored to your target
+                    universities and timelines.</p>
+                </div>
+              </div>
+              <div class="wwa-pillar">
+                <div class="wwa-pillar-icon">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div>
+                  <h4>Admissions Consulting</h4>
+                  <p>Personalized 1-to-1 strategy to craft a compelling application — from university selection to
+                    essays, interviews and final submission.</p>
+                </div>
+              </div>
+              <div class="wwa-pillar">
+                <div class="wwa-pillar-icon">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2" />
+                    <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" />
+                    <path d="M18 14l1.5 1.5L22 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div>
+                  <h4>Financial Aid Guidance</h4>
+                  <p>We help you identify and apply for scholarships, grants and financial aid opportunities at your
+                    target institutions worldwide.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- University logos ticker -->
+        <div class="wwa-unis">
+          <p class="wwa-unis-label">Students admitted to</p>
+          <div class="wwa-unis-list">
+            <span>Harvard University</span>
+            <span class="wwa-dot">·</span>
+            <span>MIT</span>
+            <span class="wwa-dot">·</span>
+            <span>Stanford University</span>
+            <span class="wwa-dot">·</span>
+            <span>University of Oxford</span>
+            <span class="wwa-dot">·</span>
+            <span>University of Cambridge</span>
+            <span class="wwa-dot">·</span>
+            <span>Yale University</span>
+            <span class="wwa-dot">·</span>
+            <span>UC Berkeley</span>
+            <span class="wwa-dot">·</span>
+            <span>Columbia University</span>
+            <span class="wwa-dot">·</span>
+            <span>University of Chicago</span>
+            <span class="wwa-dot">·</span>
+            <span>University of Toronto</span>
+            <span class="wwa-dot">·</span>
+            <span>London Business School</span>
+            <span class="wwa-dot">·</span>
+            <span>Cornell University</span>
+            <span class="wwa-dot">·</span>
+            <span>Dartmouth College</span>
+            <span class="wwa-dot">·</span>
+            <span>NYU</span>
+            <span class="wwa-dot">·</span>
+            <span>University of Manchester</span>
+            <span class="wwa-dot">·</span>
+            <span>University of Michigan</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ CONSULTANT ═══════════════════════════════════════ -->
+    <section id="consultant" class="section">
+      <div class="container">
+        <div class="consultant-grid">
+
+          <div class="consultant-image-wrap">
+            <img src="img/oscar.png" alt="Oscar Pina-Lozada, CFA — Admissions Consultant">
+            <div class="consultant-badge">
+              <div class="badge-icon">🎓</div>
+              <div>
+                <div class="badge-label">Your expert consultant</div>
+                <div class="badge-value">Oscar Pina-Lozada, CFA, MBA, BBA</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="consultant-content">
+            <p class="eyebrow">Meet Your Consultant</p>
+            <h2>Oscar Pina-Lozada, CFA</h2>
+
+            <div class="credential-tags">
+              <span class="credential-tag">⭐ +20 years of experience</span>
+              <span class="credential-tag">📊 CFA Charterholder</span>
+              <span class="credential-tag">🏢 MBA</span>
+              <span class="credential-tag">🎓 BBA</span>
+            </div>
+
+            <p class="consultant-bio">
+              Oscar is the founder of Master's College and has helped hundreds of students gain admission to some of the
+              world's most prestigious universities. He has taught Investments and Finance courses at the University of
+              the Pacific and has teaching experience at The University of Iowa.
+            </p>
+            <p class="consultant-bio">
+              He holds an MBA from The University of Iowa, where he received several assistantships and scholarships. In
+              Peru, he earned a degree in Business Administration at the University of the Pacific and is also a
+              graduate of the Master's Program in Communication Sciences at the Pontifical Catholic University of Peru.
+            </p>
+            <p class="consultant-bio">
+              A CFA Charterholder, Oscar is a member of the Investment Committee of MAPFRE Peru. He has previously
+              served as Chief Executive Officer at Andes Security Brokerage Firm and as Deputy Investment Manager and
+              Head Trader at Pacífico Seguros. In the United States, he worked as an Asset Specialist at AEGON USA
+              Investment Management.
+            </p>
+
+            <a href="#contact" class="btn btn-ghost">
+              Schedule a Consultation
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ STATS STRIP ══════════════════════════════════════ -->
+    <div class="stats-strip" aria-label="Key statistics">
+      <div class="container">
+        <div class="section-header center">
+          <p class="eyebrow">Aim to the top</p>
+          <h2>Apply to Top universities.</h2>
+          <p class="lead">At Master's College, we provide comprehensive preparation through a broader
+            strategic perspective, helping you maximize every opportunity and apply with confidence. Our
+            focus is on the world's top universities — the most prestigious institutions globally. These
+            are the characteristics that define a truly top-tier university:</p>
+        </div>
         <div class="stats-grid">
           <div class="stat-cell">
-            <span class="stat-cell-number">Personalized</span>
-            <span class="stat-cell-label">1-to-1 Guidance</span>
+            <div class="stats-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path
+                  d="M341.5 45.1C337.4 37.1 329.1 32 320.1 32C311.1 32 302.8 37.1 298.7 45.1L225.1 189.3L65.2 214.7C56.3 216.1 48.9 222.4 46.1 231C43.3 239.6 45.6 249 51.9 255.4L166.3 369.9L141.1 529.8C139.7 538.7 143.4 547.7 150.7 553C158 558.3 167.6 559.1 175.7 555L320.1 481.6L464.4 555C472.4 559.1 482.1 558.3 489.4 553C496.7 547.7 500.4 538.8 499 529.8L473.7 369.9L588.1 255.4C594.5 249 596.7 239.6 593.9 231C591.1 222.4 583.8 216.1 574.8 214.7L415 189.3L341.5 45.1z" />
+              </svg>
+            </div>
+            <span class="stat-cell-label">Highest Academic Standards</span>
           </div>
           <div class="stat-cell">
-            <span class="stat-cell-number">Strategic</span>
-            <span class="stat-cell-label">Admissions Planning</span>
+            <div class="stats-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path
+                  d="M240 88C240 74.7 229.3 64 216 64C202.7 64 192 74.7 192 88L192 128C156.7 128 128 156.7 128 192L88 192C74.7 192 64 202.7 64 216C64 229.3 74.7 240 88 240L128 240L128 296L88 296C74.7 296 64 306.7 64 320C64 333.3 74.7 344 88 344L128 344L128 400L88 400C74.7 400 64 410.7 64 424C64 437.3 74.7 448 88 448L128 448C128 483.3 156.7 512 192 512L192 552C192 565.3 202.7 576 216 576C229.3 576 240 565.3 240 552L240 512L296 512L296 552C296 565.3 306.7 576 320 576C333.3 576 344 565.3 344 552L344 512L400 512L400 552C400 565.3 410.7 576 424 576C437.3 576 448 565.3 448 552L448 512C483.3 512 512 483.3 512 448L552 448C565.3 448 576 437.3 576 424C576 410.7 565.3 400 552 400L512 400L512 344L552 344C565.3 344 576 333.3 576 320C576 306.7 565.3 296 552 296L512 296L512 240L552 240C565.3 240 576 229.3 576 216C576 202.7 565.3 192 552 192L512 192C512 156.7 483.3 128 448 128L448 88C448 74.7 437.3 64 424 64C410.7 64 400 74.7 400 88L400 128L344 128L344 88C344 74.7 333.3 64 320 64C306.7 64 296 74.7 296 88L296 128L240 128L240 88zM224 192L416 192C433.7 192 448 206.3 448 224L448 416C448 433.7 433.7 448 416 448L224 448C206.3 448 192 433.7 192 416L192 224C192 206.3 206.3 192 224 192zM240 240L240 400L400 400L400 240L240 240z" />
+              </svg>
+            </div>
+            <span class="stat-cell-label">Cutting-Edge Technology and Resources</span>
           </div>
           <div class="stat-cell">
-            <span class="stat-cell-number">Financial</span>
-            <span class="stat-cell-label">Aid &amp; Scholarships</span>
+            <div class="stats-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path
+                  d="M192 144C222.9 144 248 118.9 248 88C248 57.1 222.9 32 192 32C161.1 32 136 57.1 136 88C136 118.9 161.1 144 192 144zM176 576L176 416C176 407.2 183.2 400 192 400C200.8 400 208 407.2 208 416L208 576C208 593.7 222.3 608 240 608C257.7 608 272 593.7 272 576L272 240L400 240C417.7 240 432 225.7 432 208C432 190.3 417.7 176 400 176L384 176L384 128L576 128L576 320L384 320L384 288L320 288L320 336C320 362.5 341.5 384 368 384L592 384C618.5 384 640 362.5 640 336L640 112C640 85.5 618.5 64 592 64L368 64C341.5 64 320 85.5 320 112L320 176L197.3 176C151.7 176 108.8 197.6 81.7 234.2L14.3 324.9C3.8 339.1 6.7 359.1 20.9 369.7C35.1 380.3 55.1 377.3 65.7 363.1L112 300.7L112 576C112 593.7 126.3 608 144 608C161.7 608 176 593.7 176 576z" />
+              </svg>
+            </div>
+            <span class="stat-cell-label">World-Class Faculty</span>
           </div>
           <div class="stat-cell">
-            <span class="stat-cell-number">Global</span>
-            <span class="stat-cell-label">University Network</span>
+            <div class="stats-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path
+                  d="M119.7 263.7L150.6 294.6C156.6 300.6 164.7 304 173.2 304L194.7 304C203.2 304 211.3 307.4 217.3 313.4L246.6 342.7C252.6 348.7 256 356.8 256 365.3L256 402.8C256 411.3 259.4 419.4 265.4 425.4L278.7 438.7C284.7 444.7 288.1 452.8 288.1 461.3L288.1 480C288.1 497.7 302.4 512 320.1 512C337.8 512 352.1 497.7 352.1 480L352.1 477.3C352.1 468.8 355.5 460.7 361.5 454.7L406.8 409.4C412.8 403.4 416.2 395.3 416.2 386.8L416.2 352.1C416.2 334.4 401.9 320.1 384.2 320.1L301.5 320.1C293 320.1 284.9 316.7 278.9 310.7L262.9 294.7C258.7 290.5 256.3 284.7 256.3 278.7C256.3 266.2 266.4 256.1 278.9 256.1L313.6 256.1C326.1 256.1 336.2 246 336.2 233.5C336.2 227.5 333.8 221.7 329.6 217.5L309.9 197.8C306 194 304 189.1 304 184C304 178.9 306 174 309.7 170.3L327 153C332.8 147.2 336.1 139.3 336.1 131.1C336.1 123.9 333.7 117.4 329.7 112.2C326.5 112.1 323.3 112 320.1 112C224.7 112 144.4 176.2 119.8 263.7zM528 320C528 285.4 519.6 252.8 504.6 224.2C498.2 225.1 491.9 228.1 486.7 233.3L473.3 246.7C467.3 252.7 463.9 260.8 463.9 269.3L463.9 304C463.9 321.7 478.2 336 495.9 336L520 336C522.5 336 525 335.7 527.3 335.2C527.7 330.2 527.8 325.1 527.8 320zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320z" />
+              </svg>
+            </div>
+            <span class="stat-cell-label">Graduates at Leading Global Companies</span>
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
 
     <!-- ═══ CHALLENGES ════════════════════════════════════════ -->
     <section class="section challenges-section">
@@ -404,42 +632,100 @@
         </div>
 
         <div class="challenge-grid">
-          <article class="challenge-card fade-up" data-num="01">
+
+          <!-- 01 · Choosing the Right Universities -->
+          <article class="challenge-card fade-up">
+            <div class="challenge-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path
+                  d="M335.9 84.2C326.1 78.6 314 78.6 304.1 84.2L80.1 212.2C67.5 219.4 61.3 234.2 65 248.2C68.7 262.2 81.5 272 96 272L128 272L128 480L128 480L76.8 518.4C68.7 524.4 64 533.9 64 544C64 561.7 78.3 576 96 576L544 576C561.7 576 576 561.7 576 544C576 533.9 571.3 524.4 563.2 518.4L512 480L512 272L544 272C558.5 272 571.2 262.2 574.9 248.2C578.6 234.2 572.4 219.4 559.8 212.2L335.8 84.2zM464 272L464 480L400 480L400 272L464 272zM352 272L352 480L288 480L288 272L352 272zM240 272L240 480L176 480L176 272L240 272zM320 160C337.7 160 352 174.3 352 192C352 209.7 337.7 224 320 224C302.3 224 288 209.7 288 192C288 174.3 302.3 160 320 160z" />
+              </svg>
+            </div>
             <h3>Choosing the Right Universities</h3>
             <p>Many applicants overlook excellent universities and programs available internationally that could be a
               stronger fit for their profile and goals.</p>
           </article>
-          <article class="challenge-card fade-up" data-num="02">
+
+          <!-- 02 · Standardized Testing -->
+          <article class="challenge-card fade-up">
+            <div class="challenge-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path
+                  d="M128.1 64C92.8 64 64.1 92.7 64.1 128L64.1 512C64.1 547.3 92.8 576 128.1 576L274.3 576L285.2 521.5C289.5 499.8 300.2 479.9 315.8 464.3L448 332.1L448 234.6C448 217.6 441.3 201.3 429.3 189.3L322.8 82.7C310.8 70.7 294.5 64 277.6 64L128.1 64zM389.6 240L296.1 240C282.8 240 272.1 229.3 272.1 216L272.1 122.5L389.6 240zM332.3 530.9L320.4 590.5C320.2 591.4 320.1 592.4 320.1 593.4C320.1 601.4 326.6 608 334.7 608C335.7 608 336.6 607.9 337.6 607.7L397.2 595.8C409.6 593.3 421 587.2 429.9 578.3L548.8 459.4L468.8 379.4L349.9 498.3C341 507.2 334.9 518.6 332.4 531zM600.1 407.9C622.2 385.8 622.2 350 600.1 327.9C578 305.8 542.2 305.8 520.1 327.9L491.3 356.7L571.3 436.7L600.1 407.9z" />
+              </svg>
+            </div>
             <h3>Standardized Testing</h3>
             <p>Understanding international exams, score expectations and testing requirements across different countries
               can be confusing without proper guidance.</p>
           </article>
-          <article class="challenge-card fade-up" data-num="03">
+
+          <!-- 03 · Each University Seeks Different Profiles -->
+          <article class="challenge-card fade-up">
+            <div class="challenge-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path
+                  d="M96 192C96 130.1 146.1 80 208 80C269.9 80 320 130.1 320 192C320 253.9 269.9 304 208 304C146.1 304 96 253.9 96 192zM32 528C32 430.8 110.8 352 208 352C305.2 352 384 430.8 384 528L384 534C384 557.2 365.2 576 342 576L74 576C50.8 576 32 557.2 32 534L32 528zM464 128C517 128 560 171 560 224C560 277 517 320 464 320C411 320 368 277 368 224C368 171 411 128 464 128zM464 368C543.5 368 608 432.5 608 512L608 534.4C608 557.4 589.4 576 566.4 576L421.6 576C428.2 563.5 432 549.2 432 534L432 528C432 476.5 414.6 429.1 385.5 391.3C408.1 376.6 435.1 368 464 368z" />
+              </svg>
+            </div>
             <h3>Each University Seeks Different Profiles</h3>
             <p>Every institution evaluates applicants differently, making it essential to understand what each
               university values in its candidates.</p>
           </article>
-          <article class="challenge-card fade-up" data-num="04">
+
+          <!-- 04 · Highly Selective Admissions -->
+          <article class="challenge-card fade-up">
+            <div class="challenge-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path
+                  d="M341.5 45.1C337.4 37.1 329.1 32 320.1 32C311.1 32 302.8 37.1 298.7 45.1L225.1 189.3L65.2 214.7C56.3 216.1 48.9 222.4 46.1 231C43.3 239.6 45.6 249 51.9 255.4L166.3 369.9L141.1 529.8C139.7 538.7 143.4 547.7 150.7 553C158 558.3 167.6 559.1 175.7 555L320.1 481.6L464.4 555C472.4 559.1 482.1 558.3 489.4 553C496.7 547.7 500.4 538.8 499 529.8L473.7 369.9L588.1 255.4C594.5 249 596.7 239.6 593.9 231C591.1 222.4 583.8 216.1 574.8 214.7L415 189.3L341.5 45.1z" />
+              </svg>
+            </div>
             <h3>Highly Selective Admissions</h3>
             <p>Top universities receive applications from exceptional candidates worldwide and maintain highly
               competitive selection processes.</p>
           </article>
-          <article class="challenge-card fade-up" data-num="05">
+
+          <!-- 05 · Application Deadlines -->
+          <article class="challenge-card fade-up">
+            <div class="challenge-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path
+                  d="M216 64C229.3 64 240 74.7 240 88L240 128L400 128L400 88C400 74.7 410.7 64 424 64C437.3 64 448 74.7 448 88L448 128L480 128C515.3 128 544 156.7 544 192L544 480C544 515.3 515.3 544 480 544L160 544C124.7 544 96 515.3 96 480L96 192C96 156.7 124.7 128 160 128L192 128L192 88C192 74.7 202.7 64 216 64zM480 496C488.8 496 496 488.8 496 480L496 416L408 416L408 496L480 496zM496 368L496 288L408 288L408 368L496 368zM360 368L360 288L280 288L280 368L360 368zM232 368L232 288L144 288L144 368L232 368zM144 416L144 480C144 488.8 151.2 496 160 496L232 496L232 416L144 416zM280 416L280 496L360 496L360 416L280 416zM216 176L160 176C151.2 176 144 183.2 144 192L144 240L496 240L496 192C496 183.2 488.8 176 480 176L216 176z" />
+              </svg>
+            </div>
             <h3>Application Deadlines</h3>
             <p>Admission calendars vary by country, university and application round — careful planning is essential to
               avoid missed opportunities.</p>
           </article>
-          <article class="challenge-card fade-up" data-num="06">
+
+          <!-- 06 · Complex Documentation -->
+          <article class="challenge-card fade-up">
+            <div class="challenge-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path
+                  d="M192 112L304 112L304 200C304 239.8 336.2 272 376 272L464 272L464 512C464 520.8 456.8 528 448 528L192 528C183.2 528 176 520.8 176 512L176 128C176 119.2 183.2 112 192 112zM352 131.9L444.1 224L376 224C362.7 224 352 213.3 352 200L352 131.9zM192 64C156.7 64 128 92.7 128 128L128 512C128 547.3 156.7 576 192 576L448 576C483.3 576 512 547.3 512 512L512 250.5C512 233.5 505.3 217.2 493.3 205.2L370.7 82.7C358.7 70.7 342.5 64 325.5 64L192 64zM248 320C234.7 320 224 330.7 224 344C224 357.3 234.7 368 248 368L392 368C405.3 368 416 357.3 416 344C416 330.7 405.3 320 392 320L248 320zM248 416C234.7 416 224 426.7 224 440C224 453.3 234.7 464 248 464L392 464C405.3 464 416 453.3 416 440C416 426.7 405.3 416 392 416L248 416z" />
+              </svg>
+            </div>
             <h3>Complex Documentation</h3>
             <p>Essays, recommendations, transcripts and supporting materials often require significant preparation,
               coordination and time.</p>
           </article>
+
           <article></article>
-          <article class="challenge-card fade-up" data-num="07">
+
+          <!-- 07 · Interview Preparation -->
+          <article class="challenge-card fade-up">
+            <div class="challenge-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path
+                  d="M576 304C576 436.5 461.4 544 320 544C282.9 544 247.7 536.6 215.9 523.3L97.5 574.1C88.1 578.1 77.3 575.8 70.4 568.3C63.5 560.8 62 549.8 66.8 540.8L115.6 448.6C83.2 408.3 64 358.3 64 304C64 171.5 178.6 64 320 64C461.4 64 576 171.5 576 304z" />
+              </svg>
+            </div>
             <h3>Interview Preparation</h3>
-            <p>Most applicants are not fully prepared for admissions interviews, particularly those conducted within 
+            <p>Most applicants are not fully prepared for admissions interviews, particularly those conducted within
               American or European cultural and academic contexts.</p>
           </article>
+
         </div>
       </div>
     </section>
@@ -518,8 +804,8 @@
             <div class="timeline-content">
               <div class="timeline-step-tag">Step 06</div>
               <h3>Essays &amp; Personal Statement</h3>
-              <p>We develop authentic, compelling essays that reflect who you truly are — not a template, but your story
-                told well.</p>
+              <p>We develop authentic, compelling essays that reflect who you truly are — no matter how many sessions it
+                takes.</p>
             </div>
           </div>
 
@@ -527,8 +813,8 @@
             <div class="timeline-content">
               <div class="timeline-step-tag">Step 07</div>
               <h3>Application Portfolio</h3>
-              <p>We review and refine every element — academic records, activities, awards and supplemental materials —
-                to present your strongest self.</p>
+              <p>We help develop your CV and extracurricular profile to showcase your strongest accomplishments and
+                experiences.</p>
             </div>
             <div class="timeline-node" aria-hidden="true">07</div>
             <div class="timeline-spacer" style="flex:1"></div>
@@ -553,11 +839,50 @@
     <section id="success-stories" class="section section--dark">
       <div class="container">
 
-        <div class="section-header center" style="color:var(--white);">
+        <div class="section-header center" style="color:var(--white); max-width: 900px;">
           <p class="eyebrow" style="color:var(--accent);">Success Stories</p>
-          <h2 style="color:var(--white);">Students admitted to the world's top universities.</h2>
-          <p class="lead" style="color:rgba(255,255,255,.72);">Real results from real students. Each one guided through
-            a personalized admissions strategy — from profile evaluation to final acceptance.</p>
+          <h2 style="color:var(--white);">Our students are accepted to the world's top universities. <em
+              style="color: var(--accent);">100% admissions success.</em>
+          </h2>
+          <p class="lead" style="color:rgba(255,255,255,.72);">Every Master's
+            College student is admitted to a top university. Real results from real students.
+            Behind every successful admission is a student fully committed to the process and guided
+            by a proven admissions strategy. Our admitted students follow these following steps:</p>
+          <div class="success-principles">
+
+            <div class="success-principle">
+              <div class="success-principle-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                  <path
+                    d="M96 176C96 149.5 117.5 128 144 128C170.5 128 192 149.5 192 176L192 288L448 288L448 176C448 149.5 469.5 128 496 128C522.5 128 544 149.5 544 176L544 192L560 192C586.5 192 608 213.5 608 240L608 288C625.7 288 640 302.3 640 320C640 337.7 625.7 352 608 352L608 400C608 426.5 586.5 448 560 448L544 448L544 464C544 490.5 522.5 512 496 512C469.5 512 448 490.5 448 464L448 352L192 352L192 464C192 490.5 170.5 512 144 512C117.5 512 96 490.5 96 464L96 448L80 448C53.5 448 32 426.5 32 400L32 352C14.3 352 0 337.7 0 320C0 302.3 14.3 288 32 288L32 240C32 213.5 53.5 192 80 192L96 192L96 176z" />
+                </svg>
+              </div>
+
+              <p class="lead">
+                Give your best throughout every stage of the application journey.
+                Stay on schedule, complete every requirement, write compelling essays,
+                secure strong recommendations, and prepare thoroughly for all required
+                examinations.
+              </p>
+            </div>
+
+            <div class="success-principle">
+              <div class="success-principle-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                  <path
+                    d="M300.9 149.2L184.3 278.8C179.7 283.9 179.9 291.8 184.8 296.7C215.3 327.2 264.8 327.2 295.3 296.7L327.1 264.9C331.3 260.7 336.6 258.4 342 258C348.8 257.4 355.8 259.7 361 264.9L537.6 440L608 384L608 96L496 160L472.2 144.1C456.4 133.6 437.9 128 418.9 128L348.5 128C347.4 128 346.2 128 345.1 128.1C328.2 129 312.3 136.6 300.9 149.2zM148.6 246.7L255.4 128L215.8 128C190.3 128 165.9 138.1 147.9 156.1L144 160L32 96L32 384L188.4 514.3C211.4 533.5 240.4 544 270.3 544L286 544L279 537C269.6 527.6 269.6 512.4 279 503.1C288.4 493.8 303.6 493.7 312.9 503.1L353.9 544.1L362.9 544.1C382 544.1 400.7 539.8 417.7 531.8L391 505C381.6 495.6 381.6 480.4 391 471.1C400.4 461.8 415.6 461.7 424.9 471.1L456.9 503.1L474.4 485.6C483.3 476.7 485.9 463.8 482 452.5L344.1 315.7L329.2 330.6C279.9 379.9 200.1 379.9 150.8 330.6C127.8 307.6 126.9 270.7 148.6 246.6z" />
+                </svg>
+              </div>
+
+              <p class="lead">
+                Follow the guidance of our Expert Consultant. With more than 20 years of
+                experience helping students gain admission to the world's leading
+                universities, his expertise has helped hundreds of students achieve
+                their academic and professional goals.
+              </p>
+            </div>
+
+          </div>
         </div>
 
         <div class="stories-grid">
@@ -565,7 +890,8 @@
           <!-- Antonella Masini -->
           <article class="story-card story-card--featured">
             <div class="story-university">
-              <span class="story-program">BS in Mechanical Engineering with a concentration in CS and Product Design</span>
+              <span class="story-program">BS in Mechanical Engineering with a concentration in CS and Product
+                Design</span>
               <div class="story-uni-name">MIT</div>
               <div class="story-uni-sub">Massachusetts Institute of Technology</div>
               <div class="story-scholarship">
@@ -581,16 +907,16 @@
                 <span class="story-also-item">University of Michigan</span>
               </div>
             </div>
-            <div class="story-bottom"><div class="story-divider"></div>
-            <div class="story-student">
-              <img
-                src="img/antonella.jfif"
-                alt="Antonella Masini" class="story-photo">
-              <div class="story-info">
-                <div class="story-name">Antonella Masini</div>
-                <div class="story-services">Admissions Consulting</div>
+            <div class="story-bottom">
+              <div class="story-divider"></div>
+              <div class="story-student">
+                <img src="img/antonella.jfif" alt="Antonella Masini" class="story-photo">
+                <div class="story-info">
+                  <div class="story-name">Antonella Masini</div>
+                  <div class="story-services">Enrolled in Admissions Consulting</div>
+                </div>
               </div>
-            </div></div>
+            </div>
           </article>
 
           <!-- Marcelo Rondoy -->
@@ -612,22 +938,23 @@
                 <span class="story-also-item">University of Virginia</span>
               </div>
             </div>
-            <div class="story-bottom"><div class="story-divider"></div>
-            <div class="story-student">
-              <img
-                src="img/marcelo.jpg"
-                alt="Marcelo Rondoy" class="story-photo">
-              <div class="story-info">
-                <div class="story-name">Marcelo Rondoy</div>
-                <div class="story-services">Admissions Consulting · GRE</div>
+            <div class="story-bottom">
+              <div class="story-divider"></div>
+              <div class="story-student">
+                <img src="img/marcelo.jpg" alt="Marcelo Rondoy" class="story-photo">
+                <div class="story-info">
+                  <div class="story-name">Marcelo Rondoy</div>
+                  <div class="story-services">Enrolled in Admissions Consulting · GRE Prep</div>
+                </div>
               </div>
-            </div></div>
+            </div>
           </article>
 
           <!-- Socrates Osorio -->
           <article class="story-card story-card--featured">
             <div class="story-university">
-              <span class="story-program">BS in Electrical Engineering and Computer Sciences & Business Administration</span>
+              <span class="story-program">BS in Electrical Engineering and Computer Sciences & Business
+                Administration</span>
               <div class="story-uni-name">UC Berkeley</div>
               <div class="story-uni-sub">University of California, Berkeley</div>
               <div class="story-scholarship">
@@ -643,16 +970,16 @@
                 <span class="story-also-item">University of Florida</span>
               </div>
             </div>
-            <div class="story-bottom"><div class="story-divider"></div>
-            <div class="story-student">
-              <img
-                src="img/socrates.jfif"
-                alt="Socrates Osorio" class="story-photo">
-              <div class="story-info">
-                <div class="story-name">Socrates Osorio</div>
-                <div class="story-services">Admissions Consulting · SAT · TOEFL</div>
+            <div class="story-bottom">
+              <div class="story-divider"></div>
+              <div class="story-student">
+                <img src="img/socrates.jfif" alt="Socrates Osorio" class="story-photo">
+                <div class="story-info">
+                  <div class="story-name">Socrates Osorio</div>
+                  <div class="story-services">Enrolled in Admissions Consulting · SAT Prep · TOEFL Prep</div>
+                </div>
               </div>
-            </div></div>
+            </div>
           </article>
 
           <!-- Natalia Moreno -->
@@ -676,16 +1003,16 @@
                 <span class="story-also-item">Purdue University</span>
               </div>
             </div>
-            <div class="story-bottom"><div class="story-divider"></div>
-            <div class="story-student">
-              <img
-                src="img/natalia.jpg"
-                alt="Natalia Moreno" class="story-photo">
-              <div class="story-info">
-                <div class="story-name">Natalia Moreno</div>
-                <div class="story-services">Admissions Consulting · SAT · TOEFL</div>
+            <div class="story-bottom">
+              <div class="story-divider"></div>
+              <div class="story-student">
+                <img src="img/natalia.jpg" alt="Natalia Moreno" class="story-photo">
+                <div class="story-info">
+                  <div class="story-name">Natalia Moreno</div>
+                  <div class="story-services">Enrolled in Admissions Consulting · SAT Prep · TOEFL Prep</div>
+                </div>
               </div>
-            </div></div>
+            </div>
           </article>
 
           <!-- Ruben Bazalar -->
@@ -699,16 +1026,16 @@
                 90% Scholarship
               </div>
             </div>
-            <div class="story-bottom"><div class="story-divider"></div>
-            <div class="story-student">
-              <img
-                src="img/ruben.jfif"
-                alt="Ruben Bazalar" class="story-photo">
-              <div class="story-info">
-                <div class="story-name">Ruben Bazalar</div>
-                <div class="story-services">Admissions Consulting · SAT · TOEFL</div>
+            <div class="story-bottom">
+              <div class="story-divider"></div>
+              <div class="story-student">
+                <img src="img/ruben.jfif" alt="Ruben Bazalar" class="story-photo">
+                <div class="story-info">
+                  <div class="story-name">Ruben Bazalar</div>
+                  <div class="story-services">Enrolled in Admissions Consulting · SAT Prep · TOEFL Prep</div>
+                </div>
               </div>
-            </div></div>
+            </div>
           </article>
 
           <!-- WenXin Dong Qian — Stanford -->
@@ -718,16 +1045,16 @@
               <div class="story-uni-name">Stanford</div>
               <div class="story-uni-sub">Stanford University</div>
             </div>
-            <div class="story-bottom"><div class="story-divider"></div>
-            <div class="story-student">
-              <img
-                src="img/wenxin.jpg"
-                alt="WenXin Dong Qian" class="story-photo">
-              <div class="story-info">
-                <div class="story-name">WenXin Dong Qian</div>
-                <div class="story-services">Admissions Consulting · SAT · TOEFL</div>
+            <div class="story-bottom">
+              <div class="story-divider"></div>
+              <div class="story-student">
+                <img src="img/wenxin.jpg" alt="WenXin Dong Qian" class="story-photo">
+                <div class="story-info">
+                  <div class="story-name">WenXin Dong Qian</div>
+                  <div class="story-services">Enrolled in Admissions Consulting · SAT Prep · TOEFL Prep</div>
+                </div>
               </div>
-            </div></div>
+            </div>
           </article>
 
           <!-- Lucia Carrasco -->
@@ -743,16 +1070,16 @@
                 <span class="story-also-item">University of Michigan</span>
               </div>
             </div>
-            <div class="story-bottom"><div class="story-divider"></div>
-            <div class="story-student">
-              <img
-                src="img/lucia.jpg"
-                alt="Lucía Carrasco" class="story-photo">
-              <div class="story-info">
-                <div class="story-name">Lucía Carrasco</div>
-                <div class="story-services">Admissions Consulting · SAT</div>
+            <div class="story-bottom">
+              <div class="story-divider"></div>
+              <div class="story-student">
+                <img src="img/lucia.jpg" alt="Lucía Carrasco" class="story-photo">
+                <div class="story-info">
+                  <div class="story-name">Lucía Carrasco</div>
+                  <div class="story-services">Enrolled in Admissions Consulting · SAT Prep</div>
+                </div>
               </div>
-            </div></div>
+            </div>
           </article>
 
           <!-- Rodrigo Vega -->
@@ -769,16 +1096,16 @@
                 <span class="story-also-scholarship">+ CAD 80 000 Scholarship</span>
               </div>
             </div>
-            <div class="story-bottom"><div class="story-divider"></div>
-            <div class="story-student">
-              <img
-                src="img/rodrigo.jpg"
-                alt="Rodrigo Vega" class="story-photo">
-              <div class="story-info">
-                <div class="story-name">Rodrigo Vega</div>
-                <div class="story-services">Admissions Consulting · SAT · TOEFL</div>
+            <div class="story-bottom">
+              <div class="story-divider"></div>
+              <div class="story-student">
+                <img src="img/rodrigo.jpg" alt="Rodrigo Vega" class="story-photo">
+                <div class="story-info">
+                  <div class="story-name">Rodrigo Vega</div>
+                  <div class="story-services">Enrolled in Admissions Consulting · SAT Prep · TOEFL Prep</div>
+                </div>
               </div>
-            </div></div>
+            </div>
           </article>
 
           <!-- Roberto Luperdi -->
@@ -788,16 +1115,16 @@
               <div class="story-uni-name">Toronto</div>
               <div class="story-uni-sub">University of Toronto</div>
             </div>
-            <div class="story-bottom"><div class="story-divider"></div>
-            <div class="story-student">
-              <img
-                src="img/roberto.jpg"
-                alt="Roberto Luperdi" class="story-photo">
-              <div class="story-info">
-                <div class="story-name">Roberto Luperdi</div>
-                <div class="story-services">Admissions Consulting · GMAT</div>
+            <div class="story-bottom">
+              <div class="story-divider"></div>
+              <div class="story-student">
+                <img src="img/roberto.jpg" alt="Roberto Luperdi" class="story-photo">
+                <div class="story-info">
+                  <div class="story-name">Roberto Luperdi</div>
+                  <div class="story-services">Enrolled in Admissions Consulting · GMAT Prep</div>
+                </div>
               </div>
-            </div></div>
+            </div>
           </article>
 
           <!-- Valery Salas — Oxford -->
@@ -807,16 +1134,16 @@
               <div class="story-uni-name">Oxford</div>
               <div class="story-uni-sub">University of Oxford</div>
             </div>
-            <div class="story-bottom"><div class="story-divider"></div>
-            <div class="story-student">
-              <img
-                src="img/valery.jpg"
-                alt="Valery Salas" class="story-photo">
-              <div class="story-info">
-                <div class="story-name">Valery Salas</div>
-                <div class="story-services">Admissions Consulting · GMAT</div>
+            <div class="story-bottom">
+              <div class="story-divider"></div>
+              <div class="story-student">
+                <img src="img/valery.jpg" alt="Valery Salas" class="story-photo">
+                <div class="story-info">
+                  <div class="story-name">Valery Salas</div>
+                  <div class="story-services">Enrolled in Admissions Consulting · GMAT Prep</div>
+                </div>
               </div>
-            </div></div>
+            </div>
           </article>
 
         </div>
@@ -827,56 +1154,6 @@
           <a href="#contact" class="btn btn-primary">Start Your Journey</a>
         </div>
 
-      </div>
-    </section>
-
-    <!-- ═══ CONSULTANT ═══════════════════════════════════════ -->
-    <section id="consultant" class="section">
-      <div class="container">
-        <div class="consultant-grid">
-
-          <div class="consultant-image-wrap">
-            <img src="img/oscar.png"
-              alt="Oscar Pina-Lozada, CFA — Admissions Consultant">
-            <div class="consultant-badge">
-              <div class="badge-icon">🎓</div>
-              <div>
-                <div class="badge-label">Your expert consultant</div>
-                <div class="badge-value">Oscar Pina-Lozada, CFA, MBA, BBA</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="consultant-content">
-            <p class="eyebrow">Meet Your Consultant</p>
-            <h2>Oscar Pina-Lozada, CFA</h2>
-
-            <div class="credential-tags">
-              <span class="credential-tag">⭐ +20 years of experience</span>
-              <span class="credential-tag">📊 CFA Charterholder</span>
-              <span class="credential-tag">🏢 MBA</span>
-              <span class="credential-tag">🎓 BBA</span>
-            </div>
-
-            <p class="consultant-bio">
-              Oscar is the founder of Master's College and has helped hundreds of students gain admission to some of the world's most prestigious universities. He has taught Investments and Finance courses at the University of the Pacific and has teaching experience at The University of Iowa.
-            </p>
-            <p class="consultant-bio">
-              He holds an MBA from The University of Iowa, where he received several assistantships and scholarships. In Peru, he earned a degree in Business Administration at the University of the Pacific and is also a graduate of the Master's Program in Communication Sciences at the Pontifical Catholic University of Peru.
-            </p>
-            <p class="consultant-bio">
-              A CFA Charterholder, Oscar is a member of the Investment Committee of MAPFRE Peru. He has previously served as Chief Executive Officer at Andes Security Brokerage Firm and as Deputy Investment Manager and Head Trader at Pacífico Seguros. In the United States, he worked as an Asset Specialist at AEGON USA Investment Management. 
-            </p>
-
-            <a href="#contact" class="btn btn-ghost">
-              Schedule a Consultation
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 8h10M9 4l4 4-4 4" />
-              </svg>
-            </a>
-          </div>
-
-        </div>
       </div>
     </section>
 
@@ -925,9 +1202,9 @@
         <div class="section-header">
           <p class="eyebrow">Affordable education</p>
           <h2>Financial Aid</h2>
-          <p class="lead">The cost of attending a world-class university can seem overwhelming, leading many students 
-            to believe these opportunities are beyond their reach. Financial aid changes that reality. Understanding how 
-            aid works — and how it connects to the admissions process — is essential for maximizing both admission and 
+          <p class="lead">The cost of attending a world-class university can seem overwhelming, leading many students
+            to believe these opportunities are beyond their reach. Financial aid changes that reality. Understanding how
+            aid works — and how it connects to the admissions process — is essential for maximizing both admission and
             funding opportunities.</p>
         </div>
 
@@ -937,19 +1214,20 @@
             <div class="strategy-card">
               <div class="strategy-card-icon">📊</div>
               <h3>Aid & Admissions</h3>
-              <p>Financial aid is evaluated alongside your application. Universities consider academic achievement, personal 
+              <p>Financial aid is evaluated alongside your application. Universities consider academic achievement,
+                personal
                 background, accomplishments, and financial need when determining aid eligibility.</p>
             </div>
             <div class="strategy-card">
               <div class="strategy-card-icon">💰</div>
               <h3>Scholarships &amp; Funding</h3>
-              <p>Financial aid packages can cover anywhere from 50% to 100% of the total cost of attendance, making top 
+              <p>Financial aid packages can cover anywhere from 50% to 100% of the total cost of attendance, making top
                 universities significantly more accessible for qualified applicants.</p>
             </div>
             <div class="strategy-card">
               <div class="strategy-card-icon">🌍</div>
               <h3>Access to Top Universities</h3>
-              <p>With the right admissions and financial aid strategy, students can pursue opportunities at some of the 
+              <p>With the right admissions and financial aid strategy, students can pursue opportunities at some of the
                 world's leading universities without assuming cost will be a barrier.</p>
             </div>
           </div>
@@ -957,7 +1235,8 @@
           <div class="tailored-card">
             <span class="tailored-badge">Personalized Approach</span>
             <h3>Financial Aid Strategy</h3>
-            <p>Making a top-tier education affordable starts with a strong application. The more competitive your profile, 
+            <p>Making a top-tier education affordable starts with a strong application. The more competitive your
+              profile,
               the greater your potential access to financial aid opportunities.</p>
             <div class="tailored-divider"></div>
             <div class="tailored-feature">
@@ -1013,7 +1292,9 @@
           </details>
           <details>
             <summary>What makes this consulting different from others?</summary>
-            <p>Every engagement is led directly by our expert consultant Oscar Pina-Lozada, CFA — there are no junior consultants or outsourced
+            <p>Every engagement is led directly by our expert consultant Oscar Pina-Lozada, CFA — an admissions
+              consultant expert with over 20 years of experience in the field. There are no junior consultants or
+              outsourced
               components. The strategy is built around your individual profile, and financial aid planning is
               incorporated from the start rather than treated as an afterthought.</p>
           </details>
@@ -1294,7 +1575,8 @@
         <!-- Col 1: Brand -->
         <div class="footer-brand">
           <a href="" aria-label="Master's College">
-            <img src="img/logo-inv.png" alt="Master's College" class="footer-logo-img" style="height:100px;width:auto;margin-bottom:20px;">
+            <img src="img/logo-inv.png" alt="Master's College" class="footer-logo-img"
+              style="height:100px;width:auto;margin-bottom:20px;">
           </a>
           <div class="footer-company-name">Pineapple Prep, LLC</div>
           <div class="footer-company-loc">Delaware, United States of America</div>
@@ -1310,7 +1592,12 @@
               <span class="footer-phone-country">USA</span>
               <span class="footer-phone-number">+1 302 485 5328</span>
               <a href="https://wa.me/13024855328" target="_blank" rel="noopener" class="footer-wa-link">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.526 5.845L0 24l6.335-1.502A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.729.884.937-3.629-.235-.373A9.818 9.818 0 1112 21.818z"/></svg>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                  <path
+                    d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.526 5.845L0 24l6.335-1.502A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.729.884.937-3.629-.235-.373A9.818 9.818 0 1112 21.818z" />
+                </svg>
                 Chat on WhatsApp
               </a>
             </div>
@@ -1319,7 +1606,12 @@
               <span class="footer-phone-country">Mexico</span>
               <span class="footer-phone-number">+52 55 852 65644</span>
               <a href="https://wa.me/525585265644" target="_blank" rel="noopener" class="footer-wa-link">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.526 5.845L0 24l6.335-1.502A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.729.884.937-3.629-.235-.373A9.818 9.818 0 1112 21.818z"/></svg>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                  <path
+                    d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.526 5.845L0 24l6.335-1.502A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.729.884.937-3.629-.235-.373A9.818 9.818 0 1112 21.818z" />
+                </svg>
                 Chat on WhatsApp
               </a>
             </div>
@@ -1328,7 +1620,12 @@
               <span class="footer-phone-country">Peru</span>
               <span class="footer-phone-number">+51 1 748 5737</span>
               <a href="https://wa.me/5117485737" target="_blank" rel="noopener" class="footer-wa-link">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.526 5.845L0 24l6.335-1.502A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.729.884.937-3.629-.235-.373A9.818 9.818 0 1112 21.818z"/></svg>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                  <path
+                    d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.526 5.845L0 24l6.335-1.502A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.374l-.36-.214-3.729.884.937-3.629-.235-.373A9.818 9.818 0 1112 21.818z" />
+                </svg>
                 Chat on WhatsApp
               </a>
             </div>
@@ -1343,35 +1640,51 @@
 
             <a href="https://instagram.com/prepmc_edu" target="_blank" rel="noopener" class="footer-social-link">
               <span class="footer-social-icon">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
               </span>
               Instagram
             </a>
 
             <a href="https://tiktok.com/@prepmc" target="_blank" rel="noopener" class="footer-social-link">
               <span class="footer-social-icon">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+                </svg>
               </span>
               TikTok
             </a>
 
             <a href="https://youtube.com/c/prepmc" target="_blank" rel="noopener" class="footer-social-link">
               <span class="footer-social-icon">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
+                </svg>
               </span>
               YouTube
             </a>
 
             <a href="https://facebook.com/prepmc" target="_blank" rel="noopener" class="footer-social-link">
               <span class="footer-social-icon">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
               </span>
               Facebook
             </a>
 
-            <a href="https://linkedin.com/company/master's-college" target="_blank" rel="noopener" class="footer-social-link">
+            <a href="https://linkedin.com/company/master's-college" target="_blank" rel="noopener"
+              class="footer-social-link">
               <span class="footer-social-icon">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
               </span>
               LinkedIn
             </a>

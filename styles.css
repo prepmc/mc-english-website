@@ -355,6 +355,24 @@ h3 {
   padding: 36px 0;
 }
 
+.stats-strip h2, .stats-strip .lead {
+  color: var(--white);
+}
+
+.stats-strip .eyebrow {
+  color: var(--accent);
+}
+
+.stats-strip .section-header{
+  padding-bottom: 32px;
+}
+
+.stats-strip .stats-icon svg{
+  width: 36px;
+  height: 36px;
+  color: var(--accent);
+}
+
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -369,6 +387,8 @@ h3 {
   padding: 28px 32px;
   background: rgba(255,255,255,.03);
   text-align: center;
+  display:grid;
+  align-items: center;
 }
 
 .stat-cell-number {
@@ -542,7 +562,7 @@ h3 {
   border-color: rgba(85,15,120,.2);
 }
 
-.challenge-card::before {
+/*.challenge-card::before {
   content: attr(data-num);
   position: absolute;
   top: 20px; right: 28px;
@@ -554,10 +574,64 @@ h3 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   opacity: .12;
+}*/
+
+/* ─── Challenge icon ─────────────────────────────────── */
+.challenge-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(85,15,120,.08), rgba(150,15,125,.08));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  transition: background .3s;
+}
+
+.challenge-icon svg {
+  width: 36px;
+  height: 36px;
+  color: var(--primary);        /* hereda el stroke de currentColor */
+  transition: color .3s;
+}
+
+.challenge-card:hover .challenge-icon {
+  background: linear-gradient(135deg, rgba(85,15,120,.15), rgba(150,15,125,.15));
+}
+
+.challenge-card:hover .challenge-icon svg {
+  color: var(--secondary);
 }
 
 .challenge-card h3 { margin-bottom: 12px; }
 .challenge-card p  { color: var(--text); font-size: .93rem; }
+
+/* ─── Challenges section — background image ─────────── */
+.challenges-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.challenges-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('img/mit.webp'); /* ← tu imagen aquí */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed; /* parallax sutil — quita si prefieres estática */
+  opacity: 0.2; /* ← ajusta: 0.03 casi invisible · 0.07 más presente */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* El contenido por encima de la imagen */
+.challenges-section > .container {
+  position: relative;
+  z-index: 1;
+}
 
 /* ─── Process timeline ──────────────────────────────────── */
 /* ─── Process Timeline ──────────────────────────────────── */
@@ -1456,4 +1530,361 @@ details p {
 }
 @media (max-width: 900px) {
   .stories-grid { grid-template-columns: repeat(1, 1fr); }
+}
+/* ── Card background image layer ──────────────────────── */
+.story-card { isolation: isolate; }  /* añade esto al selector existente */
+
+.card-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: var(--bg-img);
+  background-size: cover;
+  background-position: center 30%;
+  opacity: 0.1;                    /* ← el único número que tocas */
+  z-index: 0;
+  pointer-events: none;
+  /* Máscara: solo asoman las esquinas, centro invisible */
+  mask-image: radial-gradient(
+    ellipse 100% 100% at 0% 0%,
+    transparent 0%,
+    transparent 40%,
+    rgba(0,0,0,0.3) 60%,
+    black 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 100% 100% at 0% 0%,
+    transparent 0%,
+    transparent 40%,
+    rgba(0,0,0,0.3) 60%,
+    black 100%
+  );
+}
+
+/* Todo el contenido por encima */
+.story-card > *:not(.card-bg) {
+  position: relative;
+  z-index: 1;
+}
+/* ─── Who We Are Section ──────────────────────────────────── */
+.who-we-are-section {
+  /*background: var(--white);*/
+  overflow: hidden;
+  position: relative;
+}
+
+.who-we-are-section::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -180px;
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(85,15,120,.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Grid layout */
+.wwa-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-bottom: 72px;
+}
+
+/* ── Left column: identity ── */
+.wwa-identity {
+  position: sticky;
+  top: 0px;
+}
+
+.wwa-logo-wrap {
+  /*background: var(--surface);
+  border-radius: var(--r-lg);*/
+  padding: 50px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*border: 1px solid var(--border);*/
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wwa-logo-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /*background: linear-gradient(135deg, rgba(85,15,120,.03) 0%, transparent 60%);*/
+  pointer-events: none;
+}
+
+.wwa-logo {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Stats row */
+.wwa-badge-strip {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: var(--r-md);
+  padding: 24px 20px;
+  gap: 0;
+}
+
+.wwa-badge {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+}
+
+.wwa-badge-number {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--accent);
+  display: flex;
+  align-items: flex-start;
+}
+
+.wwa-badge-plus {
+  font-size: 1.1rem;
+  margin-top: 2px;
+}
+
+.wwa-badge-label {
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.72);
+  line-height: 1.4;
+}
+
+.wwa-badge-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,.18);
+  flex-shrink: 0;
+}
+
+/* ── Right column: content ── */
+.wwa-content .eyebrow {
+  margin-bottom: 16px;
+}
+
+.wwa-content h2 {
+  margin-bottom: 20px;
+}
+
+.wwa-content .lead {
+  margin-bottom: 48px;
+  border-left: 3px solid var(--accent);
+  padding-left: 20px;
+}
+
+/* Pillars */
+.wwa-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.wwa-pillar {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 28px;
+  background: var(--white);
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+  transition: border-color .25s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease);
+}
+
+.wwa-pillar:hover {
+  border-color: rgba(85,15,120,.25);
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+
+.wwa-pillar-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--r-sm);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+.wwa-pillar-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.wwa-pillar h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.wwa-pillar p {
+  font-size: .92rem;
+  color: var(--text);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Universities strip ── */
+.wwa-unis {
+  border-top: 1px solid var(--border);
+  padding-top: 40px;
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.wwa-unis-label {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.wwa-unis-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: .88rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.wwa-dot {
+  color: var(--accent);
+  font-weight: 900;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .wwa-grid {
+    grid-template-columns: 340px 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 860px) {
+  .wwa-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .wwa-identity {
+    position: static;
+  }
+
+  .wwa-logo-wrap {
+    padding: 32px 24px;
+  }
+
+  .wwa-logo {
+    max-width: 420px;
+  }
+
+  .wwa-unis {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .wwa-badge-strip {
+    gap: 0;
+    padding: 18px 12px;
+  }
+
+  .wwa-badge-number {
+    font-size: 1.5rem;
+  }
+}
+
+/* =========================
+   Success Principles
+========================= */
+
+.success-principles{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:48px;
+  margin-top:40px;
+}
+
+.success-principle{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.success-principle-icon{
+  width:72px;
+  height:72px;
+  border-radius:20px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:24px;
+
+  color:var(--accent);
+
+  /*background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);*/
+}
+
+/* Placeholder visual */
+.success-principle-icon::before{
+  /*content:"+";*/
+  font-size:2rem;
+  color:rgba(255,255,255,.5);
+  font-weight:300;
+}
+
+.success-principle .lead{
+  margin:0;
+  color:rgba(255,255,255,.72);
+}
+
+/* Mobile */
+@media (max-width: 768px){
+
+  .success-principles{
+    grid-template-columns:1fr;
+    gap:36px;
+  }
+
+  .success-principle-icon{
+    width:64px;
+    height:64px;
+    margin-bottom:20px;
+  }
+
 }
