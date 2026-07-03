@@ -915,6 +915,23 @@
             </div>
 
           </div>
+
+          <!-- Success story video (lazy-loaded facade: thumbnail swapped for the YouTube iframe on click, keeps initial page load light) -->
+          <div class="video-showcase">
+            <p class="video-showcase-title">Don't just take our word for it —
+              <em>watch a real student share their acceptance story</em>
+            </p>
+            <div class="video-embed" data-yt-id="8x2EFmdyz3w" role="button" tabindex="0"
+              aria-label="Play video: real student success story">
+              <img class="video-embed-thumb" src="https://i.ytimg.com/vi/8x2EFmdyz3w/hqdefault.jpg"
+                alt="Success story video thumbnail" loading="lazy" width="640" height="360">
+              <span class="video-embed-play" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </span>
+            </div>
+          </div>
         </div>
 
         <div class="stories-grid">
@@ -1676,6 +1693,37 @@
   </footer>
 
   <script src="hero-carousel.js" defer></script>
+
+  <!-- ═══ SUCCESS STORY VIDEO — lazy-load YouTube on click ═══ -->
+  <script>
+    (function () {
+      document.querySelectorAll(".video-embed").forEach(function (wrap) {
+        function loadVideo() {
+          var id = wrap.getAttribute("data-yt-id");
+          if (!id || wrap.querySelector("iframe")) return;
+          var iframe = document.createElement("iframe");
+          var origin = window.location.protocol === "http:" || window.location.protocol === "https:"
+            ? "&origin=" + encodeURIComponent(window.location.origin)
+            : "";
+          iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0" + origin;
+          iframe.referrerPolicy = "strict-origin-when-cross-origin";
+          iframe.title = "Success story video";
+          iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+          iframe.allowFullscreen = true;
+          iframe.loading = "lazy";
+          wrap.innerHTML = "";
+          wrap.appendChild(iframe);
+        }
+        wrap.addEventListener("click", loadVideo);
+        wrap.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            loadVideo();
+          }
+        });
+      });
+    })();
+  </script>
 
   <!-- ═══ CONTACT FORM EMAIL SUBMISSION (Formspree) ══════════ -->
   <style>

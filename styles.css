@@ -2156,6 +2156,127 @@ details p {
 
 }
 
+/* ─── Success video showcase ────────────────────────────── */
+.video-showcase {
+  margin: 56px auto 0;
+  max-width: 720px;
+  text-align: center;
+}
+
+.video-showcase-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: -.01em;
+  color: var(--white);
+  margin: 0 0 28px;
+}
+
+.video-showcase-title em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  min-width: 280px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  cursor: pointer;
+  background: #000;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, .12);
+}
+
+.video-embed-thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s var(--ease), filter .5s var(--ease);
+}
+
+.video-embed:hover .video-embed-thumb {
+  transform: scale(1.04);
+  filter: brightness(.75);
+}
+
+.video-embed::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(14, 6, 24, 0) 40%, rgba(14, 6, 24, .55) 100%);
+  pointer-events: none;
+}
+
+.video-embed-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .35);
+  transition: transform .3s var(--ease), background .3s var(--ease);
+  z-index: 1;
+}
+
+.video-embed-play svg {
+  width: 26px;
+  height: 26px;
+  fill: var(--ink);
+  margin-left: 3px;
+}
+
+.video-embed:hover .video-embed-play {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: var(--accent-dim);
+}
+
+.video-embed:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 900px) {
+  .video-embed {
+    width: 82%;
+  }
+}
+
+@media (max-width: 560px) {
+  .video-embed {
+    width: 100%;
+  }
+
+  .video-embed-play {
+    width: 60px;
+    height: 60px;
+  }
+
+  .video-embed-play svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
 .offer-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
