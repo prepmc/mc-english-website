@@ -2,13 +2,11 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11395910967"></script>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-N3PKJHZ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); } 
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'AW-11395910967');
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1810,7 +1808,7 @@
               statusEl.textContent = "Thank you! Your message has been sent. We'll be in touch soon.";
               statusEl.className = "form-status is-success";
               form.reset();
-              gtag('event', 'conversion', {'send_to': 'AW-11395910967/Jdh7CPil2cscELea_7kq'});
+              gtag('event', 'conversion', { 'send_to': 'AW-11395910967/Jdh7CPil2cscELea_7kq' });
             } else {
               return response.json().then(function (data) {
                 throw new Error((data && data.error) || "Submission failed");
