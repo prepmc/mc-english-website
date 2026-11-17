@@ -1768,9 +1768,26 @@
   </style>
   <script>
     (function () {
-      // TODO: replace YOUR_FORM_ID with the ID Formspree gives you after
-      // creating a form connected to info@prepmc.com (see setup instructions).
       var FORMSPREE_ENDPOINT = "https://formspree.io/f/xkolqeln";
+
+      var COUNTRY_CODES = {
+        "Afghanistan": "+93", "Argentina": "+54", "Australia": "+61", "Bahrain": "+973",
+        "Bangladesh": "+880", "Belgium": "+32", "Brazil": "+55", "Brunei": "+673",
+        "Cambodia": "+855", "Canada": "+1", "Chile": "+56", "China": "+86",
+        "Colombia": "+57", "Costa Rica": "+506", "Ecuador": "+593", "Egypt": "+20",
+        "France": "+33", "Germany": "+49", "Hong Kong": "+852", "India": "+91",
+        "Indonesia": "+62", "Iran": "+98", "Iraq": "+964", "Ireland": "+353",
+        "Israel": "+972", "Italy": "+39", "Japan": "+81", "Jordan": "+962",
+        "Kazakhstan": "+7", "Kuwait": "+965", "Laos": "+856", "Lebanon": "+961",
+        "Malaysia": "+60", "Maldives": "+960", "Mexico": "+52", "Mongolia": "+976",
+        "Myanmar": "+95", "Nepal": "+977", "Netherlands": "+31", "New Zealand": "+64",
+        "Oman": "+968", "Pakistan": "+92", "Panama": "+507", "Peru": "+51",
+        "Philippines": "+63", "Qatar": "+974", "Russia": "+7", "Saudi Arabia": "+966",
+        "Singapore": "+65", "South Africa": "+27", "South Korea": "+82", "Spain": "+34",
+        "Sri Lanka": "+94", "Switzerland": "+41", "Taiwan": "+886", "Thailand": "+66",
+        "Turkey": "+90", "United Arab Emirates": "+971", "United Kingdom": "+44",
+        "United States": "+1", "Uruguay": "+598", "Uzbekistan": "+998", "Vietnam": "+84"
+      };
 
       var form = document.getElementById("contactForm");
       if (!form) return;
@@ -1781,7 +1798,6 @@
       form.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        // Basic required-field check
         var required = form.querySelectorAll("[required]");
         for (var i = 0; i < required.length; i++) {
           if (!required[i].value.trim()) {
@@ -1789,6 +1805,20 @@
             statusEl.className = "form-status is-error";
             required[i].focus();
             return;
+          }
+        }
+
+        // Capturar datos antes de resetear el formulario
+        var emailVal = (document.getElementById("email").value || "").trim().toLowerCase();
+        var rawPhone = (document.getElementById("phone").value || "").replace(/[^0-9+]/g, "");
+        var countryVal = (document.getElementById("country").value || "").trim();
+        var formattedPhone = "";
+
+        if (rawPhone) {
+          if (rawPhone.startsWith("+")) {
+            formattedPhone = rawPhone;
+          } else if (COUNTRY_CODES[countryVal]) {
+            formattedPhone = COUNTRY_CODES[countryVal] + rawPhone.replace(/^0+/, "");
           }
         }
 
@@ -1808,7 +1838,19 @@
               statusEl.textContent = "Thank you! Your message has been sent. We'll be in touch soon.";
               statusEl.className = "form-status is-success";
               form.reset();
-              gtag('event', 'conversion', { 'send_to': 'AW-11395910967/Jdh7CPil2cscELea_7kq' });
+
+              // Envío a Google Tag Manager con Enhanced Conversions
+              window.dataLayer = window.dataLayer || [];
+              var userDataPayload = {};
+              if (emailVal) userDataPayload.email = emailVal;
+              if (formattedPhone && formattedPhone.length >= 9) {
+                userDataPayload.phone_number = formattedPhone;
+              }
+
+              window.dataLayer.push({
+                "event": "lead_form_submitted",
+                "userData": userDataPayload
+              });
             } else {
               return response.json().then(function (data) {
                 throw new Error((data && data.error) || "Submission failed");
